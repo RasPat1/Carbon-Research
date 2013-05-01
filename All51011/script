@@ -12,7 +12,7 @@ export MPI_DSM_DISTRIBUTE=1
 export MPI_OPENMP_INTEROP="false"
 
 executable=./wvf.exe
-workdir=~sy682/solid/solid_even
+workdir=~rrp262/Results1234/C70_Open_F_3Pair
 output_file=output
 
 cd $PBS_O_WORKDIR
