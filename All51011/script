@@ -1,0 +1,22 @@
+#! /bin/bash
+#PBS -l select=1:ncpus=1:mem=16G
+#PBS -l place=pack
+#PBS -j oe
+#PBS -N H2@C60s_evenj 
+NPROC=1
+
+export KMP_LIBRARY="serial"
+export MKL_SERIAL=1
+export OMP_NUM_THREADS=1
+export MPI_DSM_DISTRIBUTE=1
+export MPI_OPENMP_INTEROP="false"
+
+executable=./wvf.exe
+workdir=~sy682/solid/solid_even
+output_file=output
+
+cd $PBS_O_WORKDIR
+source $MODULESHOME/init/bash
+cd $workdir
+
+mpirun -np $NPROC $executable
